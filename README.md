@@ -1,4 +1,4 @@
-# SearchRank 1.3.0
+# SearchRank 1.4.0
 
 **Release candidate · Geeklog search analytics plugin**
 
