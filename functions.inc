@@ -390,7 +390,7 @@ function plugin_getBlocks_searchrank($side, $topic='')
             $rows = count($results);
             if ($rows == 0) {
                 // No queries found
-                $display = "<div style='margin: 0;'>{$LANG_SEARCHRANK_1['noresults']}</div>";
+                $display = '<div class="searchrank">' . htmlspecialchars($LANG_SEARCHRANK_1['noresults'], ENT_QUOTES, 'UTF-8') . '</div>';
             } else {
                 $display = "<div class='searchrank'>";
                 foreach($results as $key => $value) {
@@ -412,11 +412,12 @@ function plugin_getBlocks_searchrank($side, $topic='')
             }
             $retval[] = array('name'           => 'searchrank',
                               'type'           => 'dynamic',
-                              'onleft'         => 1,
+                              'onleft'         => $_SR_CONF['isleftblock'],
                               'title'          => $LANG_SEARCHRANK_1['title'],
                               'blockorder'     => $_SR_CONF['blockorder'],
                               'content'        => $display,
                               'allow_autotags' => false,
+                              'convert_newlines' => false,
                               'help'           => '');
         }
     }
